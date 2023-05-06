@@ -1,0 +1,48 @@
+.product-box{
+  float: left;
+  width: 290px;
+  height: 360px;
+  box-sizing: border-box;
+  box-shadow: 5px 5px 5px gray;
+  margin: 30px;
+}
+
+.image-holder{
+  height: 80%;
+  width: 100%;
+}
+
+.image-holder img{
+  height: 100%;
+  width: 100%;
+  padding:10px;
+}
+
+.text{
+  
+  text-align: center;
+  color: rgb(7, 7, 7);
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 20px;
+
+} 
+.view{
+  margin-top: 10px;
+  text-align: center;
+  
+}
+
+/* .example-card {
+  float: left;
+  width: 290px;
+  height: 380px;
+  box-sizing: border-box;
+  box-shadow: 5px 5px 5px gray;
+  margin: 30px;
+}
+
+.example-header-image {
+
+  height: 80%;
+  width: 100%;
+} */

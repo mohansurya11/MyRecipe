@@ -1,0 +1,82 @@
+<div class="details">
+
+  <div class="image">
+    <img src="http://localhost/{{product.image}}" />
+  </div>
+
+  <div class="content">
+
+    <div class="tit">
+    <h1>{{product.Name}}</h1>
+    </div>
+
+    <h2 class="desc-title">Description</h2>
+    <div>
+    <p style="width: auto;">{{product.Description}}</p>
+    </div>
+
+    
+    <div class="row">
+      <!-- <div class="recipe-summary-item">
+      <p class="value">7</p>
+      <span class="unit">Ingredients</span>
+      </div> -->
+      <div class="recipe-summary-item">
+      <p class="value">30</p>
+      <span class="unit">Minutes</span>
+      </div>
+      <div class="recipe-summary-item">
+      <p class="value">620</p>
+      <span class="unit">Calories</span>
+      </div>
+    </div>
+
+    <hr>
+  
+    <h1>INGREDIENTS</h1>
+    <div *ngFor="let x of product.Ingredients" >
+      {{x}}
+    </div>
+
+    
+  
+
+  <!-- <button mat-button color="accent">View nutrition</button> -->
+  <!-- <mat-expansion-panel hideToggle class="expand">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        NUTRITION
+      </mat-panel-title>
+      
+    </mat-expansion-panel-header>
+    <p *ngFor="let x of product.nutrition" >
+      {{x}}</p>
+  </mat-expansion-panel> -->
+
+  </div>
+
+</div>
+<hr>
+
+<div class="inst">
+<h1>Instruction</h1>
+    <div *ngFor="let x of product.Method" ><br>
+      {{x}}
+    </div>
+</div>
+<hr>
+<br><br>
+
+<div class="review">
+  <div>
+  <app-review [prod] = "product.Name"></app-review>
+  </div>
+           
+  
+    
+      
+<div class="comment" *ngFor="let x of reviews | review : product.Name ">  
+<p class="data">{{x.name}} said !!!</p>
+<p class="data">"{{x.message}}"</p>
+</div>
+</div>
