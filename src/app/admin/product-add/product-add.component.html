@@ -1,0 +1,58 @@
+<div mat-dialog-title>
+  <h1>Product List</h1>
+</div>
+ <form [formGroup]="empForm" (ngSubmit)="onFormSubmit()">
+  <div mat-dialog-content class="content">
+      <div class="row">
+          <mat-form-field appearance="outline">
+              <mat-label>Name</mat-label>
+              <input matInput type="text" placeholder="" formControlName="Name">
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+              <mat-label>Image</mat-label>
+              <input matInput type="text" placeholder="" formControlName="image">
+          </mat-form-field>
+      </div>
+
+      <div class="row">
+          <mat-form-field appearance="outline">
+              <mat-label>Description</mat-label>
+              <input matInput type="text" placeholder="" formControlName="Description">
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>INGREDIENTS</mat-label>
+            <input matInput type="text" placeholder="" formControlName="Ingredients">
+        </mat-form-field>
+          
+      </div>
+
+    
+
+      <div class="row">
+        <mat-form-field appearance="outline">
+          <mat-label>Method</mat-label>
+          <input matInput type="text" placeholder="Ex. 4"  formControlName="Method">
+      </mat-form-field>
+          <mat-form-field appearance="outline">
+              <mat-label>Recipe Type</mat-label>
+              <mat-select formControlName="type">
+                  <mat-option *ngFor="let val of types" [value]="val">{{val}}
+                  </mat-option>
+              </mat-select>
+          </mat-form-field>
+          
+      </div>
+      <div class="row">
+          
+          <mat-form-field appearance="outline">
+              <mat-label>Nutrition</mat-label>
+              <input matInput placeholder="Ex. 12" type="text" formControlName="nutrition">
+          </mat-form-field>
+      </div>
+  </div>
+
+  <div mat-dialog-actions class="action">
+      <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+      <button mat-raised-button color="primary" type="submit">{{data ? 'Update': 'Save'}}</button>
+  </div>
+</form>
