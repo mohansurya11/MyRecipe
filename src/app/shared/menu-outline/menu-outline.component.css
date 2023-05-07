@@ -1,11 +1,24 @@
-
+img{
+  width:50px;
+}
 .mat-toolbar{
-  background-color: cornflowerblue;
-  color: white;
+  background-color: rgb(129, 198, 218);
+  color: black;
+  font-size:1.5rem;
+   font-weight: bold;
+  overflow: hidden;
+  position: fixed;
+  
+
+}
+a{
+  font-size: 20px;
 }
 .mat-button{
-   color: white;
+   color: rgb(228, 219, 219);
+   
 }
 .spacer{
-  flex: 1 1 auto;
+ margin-left: 450px;
+ 
 }

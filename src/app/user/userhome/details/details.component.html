@@ -7,7 +7,7 @@
   <div class="content">
 
     <div class="tit">
-    <h1>{{product.Name}}</h1>
+    <h1>{{product.Name | uppercase }}</h1>
     </div>
 
     <h2 class="desc-title">Description</h2>
@@ -17,41 +17,41 @@
 
     
     <div class="row">
-      <!-- <div class="recipe-summary-item">
-      <p class="value">7</p>
-      <span class="unit">Ingredients</span>
-      </div> -->
+      
       <div class="recipe-summary-item">
-      <p class="value">30</p>
-      <span class="unit">Minutes</span>
+      <p style="font-size: 15px;" class="value">{{product.CookingTime}}</p>
+      <span style="font-size: 15px;" class="unit">Minutes</span>
       </div>
+    
       <div class="recipe-summary-item">
-      <p class="value">620</p>
-      <span class="unit">Calories</span>
+      <p style="font-size: 15px;" class="value">{{product.TotalCalories}}</p>
+      <span style="font-size: 15px;" class="unit">Calories</span>
       </div>
     </div>
 
     <hr>
   
     <h1>INGREDIENTS</h1>
-    <div *ngFor="let x of product.Ingredients" >
+    <div *ngFor="let x of product.Ingredients" style="font-size: 17px;">
       {{x}}
     </div>
 
     
   
+<br><br>
+ 
 
-  <!-- <button mat-button color="accent">View nutrition</button> -->
-  <!-- <mat-expansion-panel hideToggle class="expand">
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        NUTRITION
-      </mat-panel-title>
-      
-    </mat-expansion-panel-header>
-    <p *ngFor="let x of product.nutrition" >
-      {{x}}</p>
-  </mat-expansion-panel> -->
+<div>
+  <button mat-button [matMenuTriggerFor]="belowMenu">
+    <div style="background: #eae7ca; padding: 2px; font-size:1.5rem;" >View Nutrition</div>
+  </button>
+  <mat-menu #belowMenu="matMenu" yPosition="below">
+  <p *ngFor="let x of product.nutrition" >
+    {{x}}</p>
+  
+ </mat-menu>
+
+</div>
 
   </div>
 
@@ -60,7 +60,7 @@
 
 <div class="inst">
 <h1>Instruction</h1>
-    <div *ngFor="let x of product.Method" ><br>
+    <div *ngFor="let x of product.Method" style="font-size: 18px;"><br>
       {{x}}
     </div>
 </div>
@@ -68,15 +68,16 @@
 <br><br>
 
 <div class="review">
-  <div>
+  <div class="rev">
   <app-review [prod] = "product.Name"></app-review>
   </div>
            
   
     
       
-<div class="comment" *ngFor="let x of reviews | review : product.Name ">  
-<p class="data">{{x.name}} said !!!</p>
-<p class="data">"{{x.message}}"</p>
+    <div class="rev" *ngFor="let x of reviews | review : product.Name ">  
+    <p style="font-size: 15px;" class="data">{{x.name | uppercase}} said !!!</p>
+    <p style="font-size: 15px;" class="data">"{{x.message}}"</p>
+    </div>
 </div>
-</div>
+

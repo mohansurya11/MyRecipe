@@ -1,4 +1,4 @@
-<h2 style="font-size: 20px; margin-left: 20px; color:red">Reviews</h2>
+<h2 style="font-size: 20px; margin-left: 20px; color:red">Leave a Reply</h2>
 
     <div class="rform">
         <form  [formGroup]="reviewForm"  (submit)="saveReview(prod)">
@@ -11,7 +11,7 @@
                        <div *ngIf='reviewForm.controls.name.hasError("minlength")'>
                                       Atleast Three Characters long</div>
                    </td>
-                   </tr>
+                   </tr><br>
                     <tr>
                    <th>Email</th>
                    <td><input type="text" formControlName="email"></td>
@@ -21,11 +21,11 @@
                           <div *ngIf='reviewForm.controls.email.hasError("pattern")'>
                                       Should be in email format</div>
                    </td>
-                   </tr>
+                   </tr><br>
                 
                    <tr>
                        <th>Comment</th>
-                       <td><textarea rows=6 cols=50 formControlName="message">
+                       <td><textarea rows=3 cols=30 formControlName="message">
                            </textarea></td>
                        <td>
                               <div *ngIf='reviewForm.controls.message.hasError("required")'>
@@ -33,7 +33,7 @@
                             <div *ngIf='reviewForm.controls.message.hasError("minlength")'>
                                         Atleast 15 characters long</div>
                        </td>
-                   </tr>
+                   </tr><br>            
                    <tr><td colspan="3" style="text-align:center">
                           <button type="submit"  class="btn btn-primary" [disabled]="!reviewForm.valid">
                                      Post Review</button>

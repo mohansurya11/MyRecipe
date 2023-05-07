@@ -11,6 +11,7 @@ import { SharedModule } from '../shared/shared.module';
 import { TypefilterPipe } from '../pipes/typefilter.pipe';
 import { ReviewComponent } from './userhome/review/review.component';
 import { ReviewPipe } from '../pipes/review.pipe';
+import { MaterialModule } from '../material/material.module';
 
 const route:Routes=[
   {path:'details/:id',component: DetailsComponent},
@@ -45,7 +46,8 @@ const route:Routes=[
     RouterModule.forChild(route),
     SharedModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MaterialModule
   ],
   exports: [RouterModule]
 })

@@ -23,6 +23,8 @@ export class HomeComponent {
     'method',
     'type',
     'nutrition',
+    'time',
+    'calories',
     'action',
   ];
   dataSource!: MatTableDataSource<any>;
@@ -30,7 +32,7 @@ export class HomeComponent {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 constructor(private _dialog:MatDialog,private router:Router,
-  private _empService: AddproductService,
+  private prodService: AddproductService,
   private _coreService: CoreService
   ){}
 
@@ -49,7 +51,7 @@ openAddEditProductForm(){
     });
 }
 getProductList() {
-  this._empService.getProductList().subscribe({
+  this.prodService.getProductList().subscribe({
     next: (res) => {
       this.dataSource = new MatTableDataSource(res);
       this.dataSource.sort = this.sort;
@@ -68,7 +70,7 @@ applyFilter(event: Event) {
   }
 }
 deleteProduct(id: number) {
-  this._empService.deleteProduct(id).subscribe({
+  this.prodService.deleteProduct(id).subscribe({
     next: (res) => {
       this._coreService.openSnackBar('Product deleted!', 'done');
       this.getProductList();

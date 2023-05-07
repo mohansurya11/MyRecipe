@@ -7,8 +7,13 @@
 
 select{
   height:30px;
-  width:100px;
-  margin-top:30px;
-  margin-left: 40px;
+  width:200px;
+  margin-top:90px;
+  margin-left: 43px;
+  border:2px solid;
+  font-size:19px;
 
+}
+option{
+  font-size:19px;
 }

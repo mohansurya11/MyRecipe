@@ -9,7 +9,7 @@ import { LoginService } from './services/login.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'mohan';
+  title = 'RECIPE';
 
   currentUrl: string = "";
   constructor(private log:LoginService,private router:Router){

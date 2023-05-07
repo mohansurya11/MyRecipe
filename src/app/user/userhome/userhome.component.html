@@ -1,5 +1,77 @@
-
-<div class="banner">
-  <h1> Your personal <br>diet planner </h1>
-  <p> Serve up recipes for your personalized meal <br>plan automatically. Calculate your nutritional <br>needs and generate custom diet plans for<br> weight loss, bodybuilding and much more!</p>
+<div class="home">
+  <img src="http://localhost/banner6.gif">
+    
+    <div class="homecontent">
+    <h1>Elavate Your Cooking Skills</h1>
+    <button class="btn btn-light">View Recipe</button>
 </div>
+    
+   
+  </div>
+  <section class="course">
+    <div class="container">
+        <h1 class="text-center">All Category</h1>
+    
+        <div class="row mt-5" >
+          <div class="box shadow-sm">
+              <div class="three" *ngFor="let x of homelist">
+              
+                  <img src="http://localhost/{{x.image}}">
+             
+    
+              </div>
+          </div>
+        </div>
+    </div>
+    
+    </section>
+
+
+
+    <footer class="bg-dark text-center text-white">
+      <!-- Grid container -->
+      <div class="container p-4 pb-0">
+        <!-- Section: Social media -->
+        <section class="mb-4">
+          <!-- Facebook -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+          
+            <i class="fab fa-facebook-f"></i>
+          </a>
+    
+          <!-- Twitter -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+            ><i class="fab fa-twitter"></i
+          ></a>
+    
+          <!-- Google -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+            ><i class="fab fa-google"></i
+          ></a>
+    
+          <!-- Instagram -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+            ><i class="fab fa-instagram"></i
+          ></a>
+    
+          <!-- Linkedin -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+    
+          <!-- Github -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+            ><i class="fab fa-github"></i
+          ></a>
+        </section>
+        <!-- Section: Social media -->
+      </div>
+      <!-- Grid container -->
+    
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2023 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/">MyRecipe.com</a>
+      </div>
+      <!-- Copyright -->
+    </footer>

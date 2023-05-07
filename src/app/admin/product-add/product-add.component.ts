@@ -11,14 +11,15 @@ import { CoreService } from 'src/app/services/core.service';
 })
 export class ProductAddComponent {
   empForm: FormGroup;
+  
   types: string[]=[
-    'breakfast',
-    'lunch',
-    'dinner',
+    'Breakfast',
+    'Lunch',
+    'Dinner',
   ];
   constructor(
     private fb: FormBuilder,
-    private _empService: AddproductService,
+    private prodService: AddproductService,
      private _dialogRef: MatDialogRef<ProductAddComponent>,
      @Inject(MAT_DIALOG_DATA) public data: any,
     private _coreService: CoreService
@@ -31,6 +32,8 @@ export class ProductAddComponent {
       Method: '',
       type: '',
       nutrition: '',
+      CookingTime:'',
+      TotalCalories:'',
       
     });
   }
@@ -40,7 +43,7 @@ export class ProductAddComponent {
   onFormSubmit() {
     if (this.empForm.valid) {
       if (this.data) {
-        this._empService
+        this.prodService
           .updateProduct(this.data.id, this.empForm.value)
           .subscribe({
             next: (val: any) => {
@@ -53,7 +56,7 @@ export class ProductAddComponent {
           });
       }
     else {
-      this._empService.addProduct(this.empForm.value).subscribe({
+      this.prodService.addProduct(this.empForm.value).subscribe({
         next: (val: any) => {
           this._coreService.openSnackBar('Product added successfully');
           this._dialogRef.close(true);
@@ -66,5 +69,5 @@ export class ProductAddComponent {
   }
 
 }
-  
+
 }

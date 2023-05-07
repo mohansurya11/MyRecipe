@@ -8,6 +8,9 @@ import { Observable } from 'rxjs';
 export class ProductService {
 
   constructor(private http:HttpClient) { }
+  getHomeProducts():Observable<any>{
+    return this.http.get("http://localhost:4500/home")
+  }
 
   getProducts():Observable<any>{
     return this.http.get("http://localhost:4500/products")
