@@ -1,0 +1,12 @@
+{
+  "translate": {
+      "home" : "Home",
+      "recipe": "Recipe",
+      "logout":"Logout",
+      "all category":"All Category",
+      "my recipe":"My Recipe",
+      "elavate your cooking skills":"Elavate Your Cooking Skills",
+      "view recipe":"View Recipe"
+
+  }
+}

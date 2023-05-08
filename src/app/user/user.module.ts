@@ -12,6 +12,15 @@ import { TypefilterPipe } from '../pipes/typefilter.pipe';
 import { ReviewComponent } from './userhome/review/review.component';
 import { ReviewPipe } from '../pipes/review.pipe';
 import { MaterialModule } from '../material/material.module';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient } from '@angular/common/http';
+
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http,'./assets/i18n/', '.json');
+}
+
 
 const route:Routes=[
   {path:'details/:id',component: DetailsComponent},
@@ -47,7 +56,14 @@ const route:Routes=[
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
+    TranslateModule.forRoot({
+      loader: {
+          provide: TranslateLoader,
+          useFactory: HttpLoaderFactory,
+          deps: [HttpClient]
+      }
+  })
   ],
   exports: [RouterModule]
 })

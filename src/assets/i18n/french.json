@@ -1,0 +1,12 @@
+{
+  "translate": {
+      "home" : "page d'accueil",
+      "recipe": "recette",
+      "logout":"Se déconnecter",
+      "all category":"Toutes les catégories",
+      "my recipe":"ma recette",
+      "elavate your cooking skills":"améliorez vos compétences culinaires",
+      "view recipe":"voir la recette"
+
+  }
+}

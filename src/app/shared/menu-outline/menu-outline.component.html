@@ -6,13 +6,19 @@
     <img src="http://localhost/logo2.png">
   </span>
   </div>
-  <span appHover>My Recipe</span>
+  <span appHover>{{"translate.my recipe" | translate}}</span>
   <div class="spacer">
-    <a mat-button color ='primary'(click)="navigate('')">Home</a>
-    <a mat-button (click)="navigate('product')">Recipe</a>
-    <a mat-button  (click)="logout()">Logout</a>
+    <a mat-button color ='primary'(click)="navigate('')">{{"translate.home" | translate}}</a>
+    <a mat-button (click)="navigate('product')">{{"translate.recipe" | translate}}</a>
+    <a mat-button  (click)="logout()">{{"translate.logout" | translate}}</a>
+  
+  <span [style.marginLeft]="'200px'" [style.color]="'white'" [style.background-position]="'fixed'">
+    <select [(ngModel)]="lang" (change)="changeLang()">
+       <option *ngFor="let x of languages" value={{x.value}}>
+         {{x.name}}</option>
+    </select>
+ </span>
   </div>
-    
 </mat-toolbar>
 
 
