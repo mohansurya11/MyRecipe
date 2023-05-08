@@ -47,7 +47,7 @@ export class ProductAddComponent {
           .updateProduct(this.data.id, this.empForm.value)
           .subscribe({
             next: (val: any) => {
-              this._coreService.openSnackBar('product detail updated!');
+              this._coreService.openSnackBar('product details updated!');
               this._dialogRef.close(true);
             },
             error: (err: any) => {

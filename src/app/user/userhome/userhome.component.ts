@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { ProductService } from 'src/app/services/product.service';
 export class UserhomeComponent {
   homelist: any
   x: any
-  constructor(private ps:ProductService){
+  constructor(private ps:ProductService,private router:Router,private route:ActivatedRoute){
     this.ps.getHomeProducts().subscribe(
       {
         next:(data:any)=> this.homelist=data,
@@ -18,5 +19,13 @@ export class UserhomeComponent {
 
     )
   
+  }
+  navigate(url:string){
+    if(url==""){
+      window.location.reload()
+    }
+    else{
+      this.router.navigate([url],{relativeTo:this.route})
+    }
   }
 }

@@ -7,15 +7,16 @@
   <div class="content">
 
     <div class="tit">
-    <h1>{{product.Name | uppercase }}</h1>
+    <h1 appHover>{{product.Name | uppercase }}</h1>
     </div>
 
-    <h2 class="desc-title">Description</h2>
+    <h2 appHover class="desc-title">Description</h2>
     <div>
     <p style="width: auto;">{{product.Description}}</p>
     </div>
 
     
+
     <div class="row">
       
       <div class="recipe-summary-item">
@@ -31,7 +32,7 @@
 
     <hr>
   
-    <h1>INGREDIENTS</h1>
+    <h1 appHover>INGREDIENTS</h1>
     <div *ngFor="let x of product.Ingredients" style="font-size: 17px;">
       {{x}}
     </div>
@@ -59,7 +60,7 @@
 <hr>
 
 <div class="inst">
-<h1>Instruction</h1>
+<h1 appHover>Instruction</h1>
     <div *ngFor="let x of product.Method" style="font-size: 18px;"><br>
       {{x}}
     </div>
@@ -81,3 +82,4 @@
     </div>
 </div>
 
+<app-footer></app-footer>
