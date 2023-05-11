@@ -15,6 +15,9 @@ import { MaterialModule } from '../material/material.module';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
+import { SearchfilterPipe } from '../pipes/searchfilter.pipe';
+import { ContactComponent } from './userhome/contact/contact.component';
+
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -31,6 +34,7 @@ const route:Routes=[
     children:[
     {path:"",component: UserhomeComponent},
     {path:"product",component:ProductComponent},
+    {path:"contact",component:ContactComponent},
     
     
   ]
@@ -47,7 +51,9 @@ const route:Routes=[
     DetailsComponent,
     TypefilterPipe,
     ReviewComponent,
-    ReviewPipe
+    ReviewPipe,
+    SearchfilterPipe,
+    ContactComponent
 
   ],
   imports: [

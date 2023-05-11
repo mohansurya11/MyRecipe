@@ -1,3 +1,4 @@
+
 <div class="details">
 
   <div class="image">
@@ -30,11 +31,17 @@
       </div>
     </div>
 
+    <!-- <div>
+      <button (click)="minus()" class="btn btn-dark"><strong>-</strong></button>
+      <input type="text" [value]="serving">
+      <button (click)="plus()" class="btn btn-dark"><strong>+</strong></button>
+
+    </div> -->
     <hr>
   
     <h1 appHover>INGREDIENTS</h1>
     <div *ngFor="let x of product.Ingredients" style="font-size: 17px;">
-      {{x}}
+      &#8226;&nbsp;&nbsp;{{x}}
     </div>
 
     
@@ -47,6 +54,7 @@
     <div style="background: #eae7ca; padding: 2px; font-size:1.5rem;" >View Nutrition</div>
   </button>
   <mat-menu #belowMenu="matMenu" yPosition="below">
+    <p>(per serving)</p>
   <p *ngFor="let x of product.nutrition" >
     {{x}}</p>
   
@@ -62,24 +70,33 @@
 <div class="inst">
 <h1 appHover>Instruction</h1>
     <div *ngFor="let x of product.Method" style="font-size: 18px;"><br>
-      {{x}}
+      &#8226;&nbsp;&nbsp;{{x}}
     </div>
 </div>
 <hr>
 <br><br>
-
-<div class="review">
+<div class="full">
+  <div class="one">
+  <div class="review">
   <div class="rev">
   <app-review [prod] = "product.Name"></app-review>
   </div>
+</div>
+</div>
            
   
-    
-      
-    <div class="rev" *ngFor="let x of reviews | review : product.Name ">  
-    <p style="font-size: 15px;" class="data">{{x.name | uppercase}} said !!!</p>
-    <p style="font-size: 15px;" class="data">"{{x.message}}"</p>
-    </div>
-</div>
+  <!-- <mat-card class="example-card"> -->
+    <mat-card-content class="txt">
+      <h4 style="color: red;">COMMENTS</h4>
+      <p class="par"  *ngFor="let x of reviews | review : product.Name ">
+        {{x.name | uppercase}} said !!!<br>
+        {{x.message}}
+        </p>
 
-<app-footer></app-footer>
+    </mat-card-content>
+  <!-- </mat-card> -->
+  </div>
+
+
+     <app-footer></app-footer>
+  

@@ -69,6 +69,7 @@ applyFilter(event: Event) {
     this.dataSource.paginator.firstPage();
   }
 }
+
 deleteProduct(id: number) {
   this.prodService.deleteProduct(id).subscribe({
     next: (res) => {

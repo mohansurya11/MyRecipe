@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductService {
+  search: any;
 
   constructor(private http:HttpClient) { }
   getHomeProducts():Observable<any>{

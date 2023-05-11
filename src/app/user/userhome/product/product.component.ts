@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -9,8 +10,6 @@ import { ProductService } from 'src/app/services/product.service';
 export class ProductComponent {
   productlist:any;
   selected:string="All";
-
-
   types:string[]=[
     "All",
     "dinner",
@@ -18,6 +17,8 @@ export class ProductComponent {
     "lunch"
 
   ]
+  
+
 
   constructor(private ps:ProductService){
     this.ps.getProducts().subscribe(
@@ -26,7 +27,5 @@ export class ProductComponent {
         error:()=>this.productlist=[]
       }
 
-    )
-  
-  }
+    )}
 }

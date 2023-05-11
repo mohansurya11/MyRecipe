@@ -15,6 +15,7 @@ export class DetailsComponent {
   id:any;
   productlist: any;
   panelOpenState = false;
+  // serving:number=1;
   constructor(private ps:ProductService,private ar:ActivatedRoute,rs:ReviewService){
     rs.getReviews().subscribe(
       {
@@ -52,4 +53,21 @@ export class DetailsComponent {
       error: ()=> this.details = {}
   })
     }
+
+
+    // i=1
+    // plus(){
+    //   if(this.i>=1){
+    //     this.i++;
+    //     this.serving=this.i
+    //   }
+
+    // }
+    // minus(){
+    //   if(this.i>1){
+    //     this.i--;
+    //     this.serving=this.i
+    //   }
+    // }
+
 }
