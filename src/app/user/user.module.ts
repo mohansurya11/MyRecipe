@@ -15,7 +15,6 @@ import { MaterialModule } from '../material/material.module';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
-import { SearchfilterPipe } from '../pipes/searchfilter.pipe';
 import { ContactComponent } from './userhome/contact/contact.component';
 
 
@@ -52,7 +51,6 @@ const route:Routes=[
     TypefilterPipe,
     ReviewComponent,
     ReviewPipe,
-    SearchfilterPipe,
     ContactComponent
 
   ],

@@ -1,5 +1,4 @@
 <div id="login-card" *ngIf="logform">
-   
   <table id="log-table">
        <tr>
            <th>Email</th>
@@ -9,22 +8,18 @@
            <th>Password</th>
            <td><input type="password" class="form-label" [(ngModel)]="password"></td>
        </tr>
-       <tr>
-           
+       <tr> 
            <td colspan=2 
                style="text-align:center"><button class="btn btn-primary" (click)="login()">Login</button></td>
        </tr>
-       <tr>
-           
+       <tr>    
            <td colspan=2 
                style="text-align:center;" (click)="toggle()">Not Registered yet? Click here</td>
        </tr>
   </table>
   <div class="loading" *ngIf="status"></div>
-  <div class="errors">{{error}}</div>
-  
+  <div class="errors">{{error}}</div>  
 </div>
-
 
 <div id="login-card" *ngIf="!logform">
   

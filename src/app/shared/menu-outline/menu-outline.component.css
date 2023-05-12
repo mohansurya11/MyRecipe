@@ -22,3 +22,14 @@ a{
  margin-left: 450px;
  
 }
+select {
+  width: 15%;
+  border: 1px solid black;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  background-color: rgb(129, 198, 218);
+  margin-left: -60px;
+}
+option{
+  font-size:20px;
+}

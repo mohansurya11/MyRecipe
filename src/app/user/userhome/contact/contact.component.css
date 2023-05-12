@@ -22,16 +22,7 @@
   margin-top: 15px;
   position: relative;
 }
-.content .left-side::before{
-  content: '';
-  position: absolute;
-  height: 70%;
-  width: 2px;
-  right: -15px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: #afafb6;
-}
+
 .content .left-side .details{
   margin: 14px;
   text-align: center;
@@ -67,7 +58,7 @@
 .right-side .input-box input,
 .right-side .input-box textarea{
   height: 100%;
-  width: 100%;
+  width: 60%;
   border: none;
   outline: none;
   font-size: 16px;
@@ -100,4 +91,3 @@
 .button input[type="button"]:hover{
   background: #5029bc;
 }
-

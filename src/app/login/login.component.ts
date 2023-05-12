@@ -13,7 +13,6 @@ export class LoginComponent {
   error?:string;
   status:boolean=false;
  
-  // Register Variables
  
   rusername:string="";
   rpassword:string="";
@@ -22,7 +21,7 @@ export class LoginComponent {
   rerror?:string;
   rstatus:boolean=false
  
- // Common variables
+
  
    logform:boolean=true;
   constructor(private log:LoginService,private route:Router) { }
@@ -65,10 +64,7 @@ export class LoginComponent {
          }
  }
 
- //new User Registration 
-
  register():void{
-    alert("Called");
      this.rerror="";
      let emailregex:RegExp=/^[a-z][a-z0-9_\.]+@[a-z]{2,5}\.[a-z]{3,5}$/
 
@@ -91,25 +87,24 @@ export class LoginComponent {
     
      else{
          this.rstatus=true;
-       
-                  this.rstatus=true;
-                  let obj={username:this.rusername,password:this.rpassword,type:"user",email: this.remail}
-                  this.log.register(obj).subscribe({
-                    next: (result:any)=>{
-                         if(result.success == false)
-                           alert("User already exists")
-                         else{
-                         alert("User successfully registered");
-                         this.logform=true;
-                         this.rstatus=false;
-                         }
-                     },
-                     error: ()=>{
-                         alert("There is problem , Please try again or later")
-                         this.rstatus=false;
-                     }}
-                  )
-              }
+         this.rstatus=true;
+         let obj={username:this.rusername,password:this.rpassword,type:"user",email: this.remail}
+         this.log.register(obj).subscribe({
+            next: (result:any)=>{
+         if(result.success == false)
+            alert("User already exists")
+     else{
+     alert("User successfully registered");
+     this.logform=true;
+     this.rstatus=false;
+         }
+       },
+      error: ()=>{
+     alert("There is problem , Please try again or later")
+       this.rstatus=false;
+     }}
+       )
+     }
           
      }
 }

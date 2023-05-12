@@ -1,49 +1,61 @@
-<div class="container">
+
+
+
+ <div class="container">
   <div class="content">
     <div class="left-side">
       <div class="address details">
         <i class="fas fa-map-marker-alt"></i>
         <div class="topic">Address</div>
-        <div class="text-one">Surkhet, NP12</div>
-        <div class="text-two">Birendranagar 06</div>
+        <div class="text-one">18,GST Road</div>
+        <div class="text-two">Chennai-21</div>
       </div>
       <div class="phone details">
         <i class="fas fa-phone-alt"></i>
         <div class="topic">Phone</div>
-        <div class="text-one">+0098 9893 5647</div>
-        <div class="text-two">+0096 3434 5678</div>
+        <div class="text-one">+91 90000 80000</div>
+        <div class="text-two">+91 90000 70000</div>
       </div>
       <div class="email details">
         <i class="fas fa-envelope"></i>
         <div class="topic">Email</div>
-        <div class="text-one">codinglab@gmail.com</div>
-        <div class="text-two">info.codinglab@gmail.com</div>
+        <div class="text-one">xyz@gmail.com</div>
+        <div class="text-two">abc@gmail.com</div>
       </div>
     </div>
     <div class="right-side">
       <div class="topic-text">Send us a message</div>
-      
-    <form>
-      <div class="input-box">
-        <input type="text" placeholder="Enter your name">
+     
+
+    <div class="rform">
+
+          <form [formGroup]="contactForm"  (submit)="saveContact(prod)">
+            <div class="input-box">
+              <input type="text" placeholder="Enter your name" formControlName="name">
+                <span *ngIf='contactForm.controls.name.hasError("required")'>*</span>
+                <span *ngIf='contactForm.controls.name.hasError("minlength")'>Atleast Three Characters long</span>
+            </div>
+            <div class="input-box">
+              <input type="text" placeholder="Enter your email" formControlName="email">
+              <span *ngIf='contactForm.controls.email.hasError("required")'>
+                *</span>
+              <span *ngIf='contactForm.controls.email.hasError("pattern")'>
+                    Should be in email format</span>
+            </div>
+            <div class="input-box message-box">
+              <textarea placeholder="Write Message"formControlName="message">
+              </textarea>
+              <span *ngIf='contactForm.controls.message.hasError("required")'>
+                *</span>
+              <span *ngIf='contactForm.controls.message.hasError("minlength")'>
+                  Atleast 10 characters long</span>
+              
+            </div>
+            <div class="button">
+              <button type="submit"  class="btn btn-primary" [disabled]="!contactForm.valid">
+                Send</button>
+            </div>
+          </form>
       </div>
-      <div class="input-box">
-        <input type="text" placeholder="Enter your email">
-      </div>
-      <div class="input-box message-box">
-        
-      </div>
-      <div class="button">
-        <input type="button" value="Send Now" >
-      </div>
-    </form>
+    </div>
   </div>
-  </div>
-</div>
-
-
-
-
-
-
-
