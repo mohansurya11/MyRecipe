@@ -10,8 +10,8 @@
   <div class="spacer">
     <a mat-button color ='primary'(click)="navigate('')">{{"translate.home" | translate}}</a>
     <a mat-button (click)="navigate('product')">{{"translate.recipe" | translate}}</a>
+    <a mat-button (click)="navigate('contact')">{{"translate.reach us" | translate}}</a>
     <a mat-button  (click)="logout()">{{"translate.logout" | translate}}</a>
-    <a mat-button (click)="navigate('contact')">Reach us</a>
   
   <span [style.marginLeft]="'200px'" [style.color]="'white'" [style.background-position]="'fixed'">
     <select [(ngModel)]="lang" (change)="changeLang()">

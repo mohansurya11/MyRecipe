@@ -1,7 +1,7 @@
 <div mat-dialog-title>
-  <h1>Product List</h1>
+  <h1>Product</h1>
 </div>
- <form [formGroup]="empForm" (ngSubmit)="onFormSubmit()">
+ <form [formGroup]="prodForm" (ngSubmit)="onFormSubmit()">
   <div mat-dialog-content class="content">
       <div class="row">
           <mat-form-field appearance="outline">
@@ -21,8 +21,10 @@
           </mat-form-field>
           <mat-form-field appearance="outline">
             <mat-label>INGREDIENTS</mat-label>
-            <input matInput type="text" placeholder="" formControlName="Ingredients">
+            <textarea matInput type="text" placeholder="" [(ngModel)]="Ingredients" [ngModelOptions]="{standalone:true}"></textarea>
         </mat-form-field>
+        <!-- <input type="hidden" placeholder="" formControlName="Ingredients"> -->
+       
           
       </div>
 
@@ -31,7 +33,7 @@
       <div class="row">
         <mat-form-field appearance="outline">
           <mat-label>Method</mat-label>
-          <textarea matInput type="text" placeholder=""  formControlName="Method"></textarea>
+          <textarea matInput type="text" placeholder="" [(ngModel)]="Method" [ngModelOptions]="{standalone:true}"></textarea>
       </mat-form-field>
           <mat-form-field appearance="outline">
               <mat-label>Recipe Type</mat-label>
@@ -46,7 +48,7 @@
           
           <mat-form-field appearance="outline">
               <mat-label>Nutrition</mat-label>
-              <textarea matInput placeholder="" type="text" formControlName="nutrition"></textarea>
+              <textarea matInput type="text" placeholder="" [(ngModel)]="nutrition" [ngModelOptions]="{standalone:true}"></textarea>
           </mat-form-field>
 
           <mat-form-field appearance="outline">

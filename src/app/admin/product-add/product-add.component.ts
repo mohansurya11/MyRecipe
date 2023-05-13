@@ -4,19 +4,37 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { AddproductService } from 'src/app/services/addproduct.service';
 import { CoreService } from 'src/app/services/core.service';
 
+interface addproduct {
+  Name: string;
+  image: string;
+  Description: string;
+  Ingredients: string[];
+  Method: string[];
+  type: string;
+  nutrition: string[];
+  CookingTime: string;
+  TotalCalories: string;
+}
+
+
 @Component({
   selector: 'app-product-add',
   templateUrl: './product-add.component.html',
   styleUrls: ['./product-add.component.css']
 })
 export class ProductAddComponent {
-  empForm: FormGroup;
-  
+  prodForm: FormGroup;
+
   types: string[]=[
     'Breakfast',
     'Lunch',
     'Dinner',
   ];
+  Ingredients:string = "";
+  Method:string = "";
+  nutrition:string = "";
+
+
   constructor(
     private fb: FormBuilder,
     private prodService: AddproductService,
@@ -24,27 +42,42 @@ export class ProductAddComponent {
      @Inject(MAT_DIALOG_DATA) public data: any,
     private _coreService: CoreService
   ) {
-    this.empForm = this.fb.group({
+    this.prodForm = this.fb.group<addproduct>({
       Name: '',
       image: '',
       Description: '',
-      Ingredients: '',
-      Method: '',
+      Ingredients: [],
+      Method: [],
       type: '',
-      nutrition: '',
+      nutrition: [],
       CookingTime:'',
       TotalCalories:'',
       
     });
   }
   ngOnInit(): void {
-    this.empForm.patchValue(this.data);
+    this.prodForm.patchValue(this.data);
+    this.Ingredients = this.data.Ingredients.join(',');
+    this.Method = this.data.Method.join(',');
+    this.nutrition = this.data.nutrition.join(',');
+
+
   }
   onFormSubmit() {
-    if (this.empForm.valid) {
+    if(this.Ingredients){
+      this.prodForm.controls['Ingredients'].setValue(this.Ingredients.split(','));
+    }
+    if(this.Method){
+      this.prodForm.controls['Method'].setValue(this.Method.split(','));
+    }
+    if(this.nutrition){
+      this.prodForm.controls['nutrition'].setValue(this.nutrition.split(','));
+    }
+    
+    if (this.prodForm.valid) {
       if (this.data) {
         this.prodService
-          .updateProduct(this.data.id, this.empForm.value)
+          .updateProduct(this.data.id, this.prodForm.value)
           .subscribe({
             next: (val: any) => {
               this._coreService.openSnackBar('product details updated!');
@@ -56,7 +89,7 @@ export class ProductAddComponent {
           });
       }
     else {
-      this.prodService.addProduct(this.empForm.value).subscribe({
+      this.prodService.addProduct(this.prodForm.value).subscribe({
         next: (val: any) => {
           this._coreService.openSnackBar('Product added successfully');
           this._dialogRef.close(true);

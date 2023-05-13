@@ -17,9 +17,6 @@ export class ProductComponent {
     "lunch"
 
   ]
-  
-
-
   constructor(private ps:ProductService){
     this.ps.getProducts().subscribe(
       {

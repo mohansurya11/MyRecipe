@@ -9,17 +9,13 @@ import { ReviewService } from 'src/app/services/review.service';
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent {
-stringify(arg0: any): any {
-throw new Error('Method not implemented.');
-}
+
   reviews:any;
   product:any;
   details:any;
   id:any;
   productlist: any;
   panelOpenState = false;
-
-  // serving:number=1;
   constructor(private ps:ProductService,private ar:ActivatedRoute,rs:ReviewService){
     rs.getReviews().subscribe(
       {
@@ -57,29 +53,4 @@ throw new Error('Method not implemented.');
       error: ()=> this.details = {}
   })
     }
-
-
-    // i=1
-    // plus(){
-    //   if(this.i>=1){
-    //     this.i++;
-    //     this.serving=this.i
-    //   }
-
-    // }
-    // minus(){
-    //   if(this.i>1){
-    //     this.i--;
-    //     this.serving=this.i
-    //   }
-    // }
-    // calculate(){
-    //   for(let item of this.details.Ingredients){
-    //     let items=item.split("")
-        
-        
-    //   }
-
-    // }
-
 }

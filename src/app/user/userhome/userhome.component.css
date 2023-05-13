@@ -52,6 +52,7 @@
   box-sizing: border-box;
   box-shadow: 5px 5px 5px gray;
   margin: 40px;
+  border-radius: 20%;
   
 }
 .three{
